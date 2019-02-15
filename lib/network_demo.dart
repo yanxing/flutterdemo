@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdemo/movie_cell.dart';
 import 'package:flutterdemo/model/movie.dart';
 
-///网络请求
+///网络请求。
 class NetworkDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
