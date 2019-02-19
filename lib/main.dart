@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/bottom_navigation_bar_demo.dart';
+import 'package:flutterdemo/drawer_demo.dart';
 import 'package:flutterdemo/network_demo.dart';
 import 'package:flutterdemo/widget_demo.dart';
 
@@ -49,7 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
     list.add(_customButton("网络请求", 1));
     list.add(_customButton("一些控件", 2));
     list.add(_customButton("底部导航", 3));
-    list.add(_customButton("打开摄像头", 4));
+    list.add(_customButton("抽屉", 4));
+    list.add(_customButton("tab滑动菜单", 5));
     return list;
   }
 
@@ -85,10 +87,22 @@ class _MyHomePageState extends State<MyHomePage> {
         MaterialPageRoute(builder: (context) => WidgetDemo()),
       );
     } else if (type == 3) {
-      //一些控件
+      //底部导航
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => BottomNavigationBarDemo()),
+      );
+    } else if (type == 4) {
+      //抽屉
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DrawerDemo()),
+      );
+    } else if (type == 4) {
+      //tab滑动菜单
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DrawerDemo()),
       );
     }
   }
