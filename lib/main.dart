@@ -48,11 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _initListData() {
     List<Widget> list = [];
-    list.add(_customButton("网络请求", 1));
-    list.add(_customButton("一些控件", 2));
-    list.add(_customButton("底部导航", 3));
-    list.add(_customButton("抽屉", 4));
-    list.add(_customButton("tab滑动菜单", 5));
+    list.add(_customButton("一些控件", 1));
+    list.add(_customButton("底部导航", 2));
+    list.add(_customButton("抽屉", 3));
+    list.add(_customButton("tab滑动菜单", 4));
+    list.add(_customButton("网络请求", 5));
     return list;
   }
 
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Padding(
         padding: (type == 1
             ? new EdgeInsets.only(
-                left: 20.0, top: 25.0, right: 20.0, bottom: 5.0)
+            left: 20.0, top: 25.0, right: 20.0, bottom: 5.0)
             : new EdgeInsets.symmetric(vertical: (5), horizontal: 20)),
         child: FlatButton(
           color: Colors.blue,
@@ -69,41 +69,41 @@ class _MyHomePageState extends State<MyHomePage> {
           splashColor: Colors.grey,
           child: Text(title),
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           onPressed: () => _onClick(type),
         ));
   }
 
   _onClick(int type) {
-    //网络请求demo
     if (type == 1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => NetworkDemo()),
-      );
-    } else if (type == 2) {
       //一些控件
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => WidgetDemo()),
       );
-    } else if (type == 3) {
+    } else if (type == 2) {
       //底部导航
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => BottomNavigationBarDemo()),
       );
-    } else if (type == 4) {
+    } else if (type == 3) {
       //抽屉
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => DrawerDemo()),
       );
-    } else if (type == 5) {
+    } else if (type == 4) {
       //tab滑动菜单
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => TabBarViewDemo()),
+      );
+    } else if (type == 5) {
+      //网络请求demo
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => NetworkDemo()),
       );
     }
   }
