@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdemo/bottom_navigation_bar_demo.dart';
 import 'package:flutterdemo/drawer_demo.dart';
 import 'package:flutterdemo/network_demo.dart';
+import 'package:flutterdemo/tab_bar_view_demo.dart';
 import 'package:flutterdemo/widget_demo.dart';
 
 void main() => runApp(MyApp());
@@ -98,11 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
         context,
         MaterialPageRoute(builder: (context) => DrawerDemo()),
       );
-    } else if (type == 4) {
+    } else if (type == 5) {
       //tab滑动菜单
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => DrawerDemo()),
+        MaterialPageRoute(builder: (context) => TabBarViewDemo()),
       );
     }
   }
