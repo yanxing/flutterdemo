@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/bottom_navigation_bar_demo.dart';
 import 'package:flutterdemo/network_demo.dart';
 import 'package:flutterdemo/widget_demo.dart';
 
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Widget> list = [];
     list.add(_customButton("网络请求", 1));
     list.add(_customButton("一些控件", 2));
-    list.add(_customButton("打开系统相册", 3));
+    list.add(_customButton("底部导航", 3));
     list.add(_customButton("打开摄像头", 4));
     return list;
   }
@@ -77,11 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
         context,
         MaterialPageRoute(builder: (context) => NetworkDemo()),
       );
-    }else if(type==2){
+    } else if (type == 2) {
       //一些控件
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => WidgetDemo()),
+      );
+    } else if (type == 3) {
+      //一些控件
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNavigationBarDemo()),
       );
     }
   }
