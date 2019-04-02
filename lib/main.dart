@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/bottom_navigation_bar_demo.dart';
 import 'package:flutterdemo/drawer_demo.dart';
+import 'package:flutterdemo/login_demo.dart';
 import 'package:flutterdemo/network_demo.dart';
 import 'package:flutterdemo/tab_bar_view_demo.dart';
 import 'package:flutterdemo/widget_demo.dart';
@@ -52,7 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
     list.add(_customButton("底部导航", 2));
     list.add(_customButton("抽屉", 3));
     list.add(_customButton("tab滑动菜单", 4));
-    list.add(_customButton("网络请求", 5));
+    list.add(_customButton("列表", 5));
+    list.add(_customButton("注册登录", 6));
     return list;
   }
 
@@ -100,10 +102,16 @@ class _MyHomePageState extends State<MyHomePage> {
         MaterialPageRoute(builder: (context) => TabBarViewDemo()),
       );
     } else if (type == 5) {
-      //网络请求demo
+      //列表demo
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => NetworkDemo()),
+      );
+    }else if (type == 6) {
+      //注册登录
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginDemo()),
       );
     }
   }
