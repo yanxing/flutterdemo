@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/model/login.dart';
 import 'package:flutterdemo/model/register.dart';
-import 'package:flutterdemo/util/commentUtil.dart';
+import 'package:flutterdemo/util/comment_util.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 ///注册

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterdemo/model/movie.dart';
-import 'package:flutterdemo/widget/Blank.dart';
+import 'package:flutterdemo/widget/blank.dart';
 
 class MovieCell extends StatelessWidget {
   final SubjectsListBean movie;

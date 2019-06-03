@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/widget/Blank.dart';
+import 'package:flutterdemo/widget/blank.dart';
 
 ///一些Widget使用。
 class WidgetDemo extends StatefulWidget {
