@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutterdemo/bottom_navigation_bar_demo.dart';
 import 'package:flutterdemo/drawer_demo.dart';
 import 'package:flutterdemo/login_demo.dart';
@@ -22,9 +23,13 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),
+      builder: FlutterBoost.init(postPush: _onRoutePushed),
       home: MyHomePage(title: 'Flutter Demo'),
     );
   }
+
+  void _onRoutePushed(
+      String pageName, String uniqueId, Map params, Route route, Future _) {}
 }
 
 class MyHomePage extends StatefulWidget {
@@ -47,6 +52,19 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  @override
+  void initState() {
+    super.initState();
+    FlutterBoost.singleton.registerPageBuilders({
+      'sample://firstPage': (pageName, params, _) {
+        print("flutterPage params:$params");
+        return MyHomePage(title: 'Flutter Demo');
+      },
+      'sample://secondPage': (pageName, params, _) => BottomNavigationBarDemo(),
+    });
+    FlutterBoost.handleOnStartPage();
+  }
+
   _initListData() {
     List<Widget> list = [];
     list.add(_customButton("一些控件", 1));
@@ -62,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Padding(
         padding: (type == 1
             ? new EdgeInsets.only(
-            left: 20.0, top: 25.0, right: 20.0, bottom: 5.0)
+                left: 20.0, top: 25.0, right: 20.0, bottom: 5.0)
             : new EdgeInsets.symmetric(vertical: (5), horizontal: 20)),
         child: FlatButton(
           color: Colors.blue,
@@ -71,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
           splashColor: Colors.grey,
           child: Text(title),
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           onPressed: () => _onClick(type),
         ));
   }
@@ -107,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         context,
         MaterialPageRoute(builder: (context) => NetworkDemo()),
       );
-    }else if (type == 6) {
+    } else if (type == 6) {
       //注册登录
       Navigator.push(
         context,
