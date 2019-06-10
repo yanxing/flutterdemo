@@ -30,7 +30,7 @@ class FlutterPageActivity : BoostFlutterActivity() {
      * @return
      */
     override fun getContainerName(): String {
-        return "sample://firstPage"
+        return PageRouter.FLUTTER_PAGE_URL
     }
 
     /**

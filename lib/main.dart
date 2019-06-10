@@ -73,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     list.add(_customButton("tab滑动菜单", 4));
     list.add(_customButton("列表", 5));
     list.add(_customButton("注册登录", 6));
+    list.add(_customButton("打开Android原生界面",7));
     return list;
   }
 
@@ -131,6 +132,11 @@ class _MyHomePageState extends State<MyHomePage> {
         context,
         MaterialPageRoute(builder: (context) => LoginDemo()),
       );
+    } else if(type==7){
+      //打开Android原生
+      FlutterBoost.singleton.openPage("sample://nativePage", {
+        "query": {"aaa": "bbb"}
+      });
     }
   }
 }

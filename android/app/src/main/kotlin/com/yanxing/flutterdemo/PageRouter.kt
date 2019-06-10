@@ -9,6 +9,7 @@ import android.content.Intent
 object PageRouter  {
 
     val FLUTTER_PAGE_URL="sample://firstPage"
+    val NATIVE_PAGE_URL="sample://nativePage"
 
     fun openPageByUrl(content:Context,url:String):Boolean{
         return openPageByUrl(content,url,0)
@@ -19,11 +20,12 @@ object PageRouter  {
             if (url.startsWith(FLUTTER_PAGE_URL)){
                 content.startActivity(Intent(content,FlutterPageActivity::class.java))
                 return true
+            }else if (url.startsWith(NATIVE_PAGE_URL)){
+                content.startActivity(Intent(content,MainActivity::class.java))
+                return true
             }
             return false
         }catch (e:Exception){}
         return false
     }
-
-
 }

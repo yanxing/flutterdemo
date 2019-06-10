@@ -3,6 +3,7 @@ package com.yanxing.flutterdemo
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import io.flutter.app.FlutterApplication
 
 import com.taobao.idlefish.flutterboost.Debuger
@@ -33,6 +34,7 @@ class MyApplication : FlutterApplication() {
             }
 
             override fun startActivity(context: Context, url: String, requestCode: Int): Boolean {
+                Log.d("flutter打开原生",url)
                 return PageRouter.openPageByUrl(context, url, requestCode)
             }
 
