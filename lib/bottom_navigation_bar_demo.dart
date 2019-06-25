@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/widget/titlebar.dart';
 
 ///底部导航
 class BottomNavigationBarDemo extends StatefulWidget {
@@ -15,10 +16,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarDemo> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        title: Text(_tabLabel[_selectedIndex]),
-        centerTitle: false,
-      ),
+      appBar: TitleBar.tilte(_tabLabel[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

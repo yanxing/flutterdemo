@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/model/register.dart';
 import 'package:flutterdemo/util/comment_util.dart';
+import 'package:flutterdemo/widget/titlebar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 ///注册
@@ -20,9 +21,7 @@ class _RegisterStateDemo extends State<RegisterDemo> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        title: Text("注册"),
-      ),
+      appBar: TitleBar.tilte("注册"),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
         child: new Column(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/widget/blank.dart';
+import 'package:flutterdemo/widget/titlebar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 ///一些Widget使用。
 class WidgetDemo extends StatefulWidget {
@@ -16,11 +18,19 @@ class _MyWidgetDemo extends State<WidgetDemo> {
 
   @override
   Widget build(BuildContext context) {
+    Configuration configuration = new Configuration.setOnMenuClickListener(
+        clickTitleMenu: () {
+          Fluttertoast.showToast(msg: "点击了文字菜单");
+        }, clickIconMenu: () {
+      Fluttertoast.showToast(msg: "点击了图标菜单");
+    });
+    configuration.title = "一些控件";
+    configuration.centerTitle = true;
+    configuration.back = Icon(Icons.arrow_back_ios, color: Colors.black,);
+    configuration.rightIcon = Icon(Icons.access_alarms);
+    configuration.rightTitle = "菜单";
     return Scaffold(
-        appBar: AppBar(
-          title: Text("一些控件"),
-          centerTitle: false,
-        ),
+      appBar:  TitleBar(configuration),
         body: Scrollbar(
           child: SingleChildScrollView(
             child: Column(
