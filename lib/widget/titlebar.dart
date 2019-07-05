@@ -5,7 +5,7 @@ class TitleBar extends StatelessWidget implements PreferredSizeWidget {
   Configuration configuration = new Configuration();
 
   ///设置标题文字，居中
-  TitleBar.tilte(String title)
+  TitleBar.title(String title)
       : preferredSize = Size.fromHeight(kToolbarHeight) {
     configuration.title = title;
   }

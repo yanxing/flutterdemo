@@ -22,7 +22,7 @@ class _LoginStateDemo extends State<LoginDemo> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar:TitleBar.tilte("登录"),
+      appBar:TitleBar.title("登录"),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
         child: new Column(

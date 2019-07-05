@@ -16,7 +16,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarDemo> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: TitleBar.tilte(_tabLabel[_selectedIndex]),
+      appBar: TitleBar.title(_tabLabel[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

@@ -21,7 +21,7 @@ class _RegisterStateDemo extends State<RegisterDemo> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: TitleBar.tilte("注册"),
+      appBar: TitleBar.title("注册"),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
         child: new Column(

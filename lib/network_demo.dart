@@ -19,7 +19,7 @@ class _MyNetworkDemo extends State<NetworkDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: TitleBar.tilte("网络请求"),
+        appBar: TitleBar.title("网络请求"),
         body: ListView.builder(
           itemBuilder: (context, index) {
             return MovieCell(movie: movieList[index]);
