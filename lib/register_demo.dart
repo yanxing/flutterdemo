@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/model/register.dart';
-import 'package:flutterdemo/util/comment_util.dart';
+import 'package:flutterdemo/util/common_util.dart';
 import 'package:flutterdemo/widget/titlebar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -82,11 +82,11 @@ class _RegisterStateDemo extends State<RegisterDemo> {
 
   ///注册
   _register(String username, String password) async {
-    if (CommentUtil.isEmpty(username)) {
+    if (CommonUtil.isEmpty(username)) {
       Fluttertoast.showToast(msg: "请输入用户名");
       return;
     }
-    if (CommentUtil.isEmpty(password)) {
+    if (CommonUtil.isEmpty(password)) {
       Fluttertoast.showToast(msg: "请输入密码");
       return;
     }

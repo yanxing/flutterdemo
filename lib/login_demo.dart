@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/model/login.dart';
 import 'package:flutterdemo/register_demo.dart';
-import 'package:flutterdemo/util/comment_util.dart';
+import 'package:flutterdemo/util/common_util.dart';
 import 'package:flutterdemo/widget/titlebar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -104,11 +104,11 @@ class _LoginStateDemo extends State<LoginDemo> {
 
   ///登录
   _login(String username, String password) async {
-    if (CommentUtil.isEmpty(username)) {
+    if (CommonUtil.isEmpty(username)) {
       Fluttertoast.showToast(msg: "请输入用户名");
       return;
     }
-    if (CommentUtil.isEmpty(password)) {
+    if (CommonUtil.isEmpty(password)) {
       Fluttertoast.showToast(msg: "请输入密码");
       return;
     }
